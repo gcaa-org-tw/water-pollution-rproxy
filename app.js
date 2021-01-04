@@ -3,6 +3,7 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+var axios = require('axios');
 
 var indexRouter = require('./routes/index');
 var wpRouter = require('./routes/wp');
@@ -21,6 +22,11 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/wp/', wpRouter);
+
+app.get('/myip', async (req, res) => {
+  const ipResp = await axios.get('http://checkip.dyndns.org/')
+  res.send(ipResp.data)
+})
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
