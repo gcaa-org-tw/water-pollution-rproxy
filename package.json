@@ -1,0 +1,11 @@
+{
+  "name": "water-pollution-rproxy",
+  "version": "0.0.1",
+  "description": "Reverse proxy for water pollution",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "ddio",
+  "license": "MIT"
+}
